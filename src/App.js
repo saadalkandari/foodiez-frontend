@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import Home from "./components/Home";
 import Categories from "./components/Categories";
-import Recipes from "./components/Recipes";
+import RecipesList from "./components/RecipesList";
 import NavBar from "./components/NavBar";
 import "./style/stolen.css";
 import Header from "./components/Header";
@@ -12,12 +12,9 @@ function App() {
     <div className="App">
       <NavBar />
       <Header />
-      <CardContainer />
-
+      <RecipesList />
       <Home />
       <Categories />
-
-      <Recipes />
     </div>
   );
 }
