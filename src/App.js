@@ -1,11 +1,9 @@
-import logo from "./logo.svg";
 import Home from "./components/Home";
-import Categories from "./components/Categories";
 import RecipesList from "./components/RecipesList";
+import CategoriesList from "./components/CategoriesList";
 import NavBar from "./components/NavBar";
 import "./style/stolen.css";
 import Header from "./components/Header";
-import CardContainer from "./components/CardsContainer";
 
 function App() {
   return (
@@ -14,7 +12,7 @@ function App() {
       <Header />
       <RecipesList />
       <Home />
-      <Categories />
+      <CategoriesList />
     </div>
   );
 }
