@@ -1,22 +1,18 @@
 import Home from "./components/Home";
+import RecipesList from "./components/RecipesList";
 import CategoriesList from "./components/CategoriesList";
-import Recipes from "./components/Recipes";
 import NavBar from "./components/NavBar";
 import "./style/stolen.css";
 import Header from "./components/Header";
-import CardContainer from "./components/CardsContainer";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
       <Header />
-      <CategoriesList />
-      <CardContainer />
-
+      <RecipesList />
       <Home />
-
-      <Recipes />
+      <CategoriesList />
     </div>
   );
 }
