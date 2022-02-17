@@ -11,6 +11,8 @@ class CategoreyStore {
     category.id = this.categories[this.categories.length - 1].id + 1;
     this.categories = [...this.categories, category];
   };
+
+  fetchCategoryRecipes = () => {};
 }
 
 const categoryStore = new CategoreyStore();
