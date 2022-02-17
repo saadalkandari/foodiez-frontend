@@ -13,14 +13,7 @@ class CategoreyStore {
     this.categories = [...this.categories, category];
   };
 
-  getAllCategories = async () => {
-    try {
-      const response = await instance.get("/categories");
-      this.categories = response.data;
-    } catch (error) {
-      console.log("CategoreyStore -> getAllCategories -> error", error);
-    }
-  };
+
 
   createCategory = async (newCategory) => {
     try {

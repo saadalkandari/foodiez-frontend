@@ -4,10 +4,10 @@ import recipeStore from "../stores/recipesStore";
 import Card from "./RecipesCard";
 
 function RecipesList() {
-  console.log(recipeStore.recipes);
   const recipesList = recipeStore.recipes.map((recipe) => (
     <Card key={recipe.id} recipe={recipe} />
   ));
+
   return (
     <section class="py-5">
       <div class="container px-4 px-lg-5 mt-5">
