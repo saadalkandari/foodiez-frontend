@@ -11,8 +11,9 @@ function AddCategoryModal({ show, handleClose }) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    categoryStore.createCategory(category);
     handleClose();
-    categoryStore.addCategory(category);
+    //categoryStore.addCategory(category);
   };
 
   return (
