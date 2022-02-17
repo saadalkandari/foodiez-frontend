@@ -24,18 +24,24 @@ function CategoriesList() {
   return (
     <div>
       <h1 className="title">Categories</h1>
-      <Stack direction="horizontal" gap={3}>
+      <Stack direction="horizontal" gap={2}>
         <Form.Control
           className="m-2"
-          placeholder="Search for product by name"
+          placeholder="Search for Catogery by name"
           onChange={search}
         />
+        <Button
+          onClick={handleShow}
+          className="m-1"
+          variant="warning"
+          size="sm"
+        >
+          ADD CATEGORY
+        </Button>
       </Stack>
 
-      <Row>{categoryList}</Row>
-      <Button onClick={handleShow} className="m-1" variant="danger">
-        ADD
-      </Button>
+      <Row className=" b-1">{categoryList}</Row>
+
       <Modal show={show} handleClose={handleClose}></Modal>
     </div>
   );
