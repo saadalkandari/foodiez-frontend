@@ -12,6 +12,9 @@ class CategoreyStore {
     this.categories = [...this.categories, category];
   };
 
+
+  fetchCategoryRecipes = () => {};
+
   getAllCategories = async () => {
     try {
       const response = await instance.get("/categories");
@@ -29,6 +32,7 @@ class CategoreyStore {
       console.log("CategoreyStore -> creatCategories -> error", error);
     }
   };
+
 }
 
 const categoryStore = new CategoreyStore();

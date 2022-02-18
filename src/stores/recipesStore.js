@@ -1,12 +1,40 @@
 import { makeAutoObservable } from "mobx";
-import recipesData from "../data/recipesData";
+
+import instance from "./instance";
 
 class RecipesStore {
-  recipes = recipesData;
+  recipes = [];
   constructor() {
     makeAutoObservable(this);
   }
+
+  fetchAllRrecipes = async () => {
+    try {
+      const response = await instance.get("/recipies");
+      this.recipes = response.data;
+    } catch (error) {
+      console.log("recipesStore -> fetchAllRrecipes -> error", error);
+    }
+  };
+
+  createRecipe = async (newRecipe) => {
+    try {
+      const formData = new FormData();
+      for (const property in newRecipe)
+        formData.append(property, newRecipe[property]);
+      const response = await instance.post("/recipes", newRecipe);
+      this.recipes.push(response.data);
+    } catch (error) {
+      console.log(
+        "🚀 ~ file: recipesStore.js ~ line 16 ~ recipesStore ~ createRecipe = ~ error",
+        error
+      );
+    }
+  };
+
+  handleImage = () => {};
 }
 
 const recipeStore = new RecipesStore();
+recipeStore.fetchAllRrecipes();
 export default recipeStore;
