@@ -4,7 +4,7 @@ import { Card, Col } from "react-bootstrap";
 
 function CategoriesCard({ category }) {
   return (
-    <Col className="col-lg-4 mx-auto">
+    <Col className="col-lg-4 mx-auto" id="categories">
       <Card>
         <Card.Body>
           <Card.Text>{category.title}</Card.Text>

@@ -32,7 +32,7 @@ function AddCategoryModal({ show, handleClose }) {
               />
             </InputGroup>
 
-            <Button variant="dark" type="submit" onClick={handleSubmit}>
+            <Button variant="warning" type="submit" onClick={handleSubmit}>
               Submit
             </Button>
           </form>
