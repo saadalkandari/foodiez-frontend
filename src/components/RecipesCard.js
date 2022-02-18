@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ recipe }) => {
   return (
-    <div class="col mb-5">
+    <div class="col mb-5" id="recepies">
       <div class="card h-100">
         <img class="card-img-top" src={recipe.image} alt="..." />
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 import recipeStore from "../stores/recipesStore";
-import Card from "./Card";
+import Card from "./RecipesCard";
 
 function RecipesList() {
   const recipesList = recipeStore.recipes.map((recipe) => (

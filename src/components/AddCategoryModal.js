@@ -11,8 +11,9 @@ function AddCategoryModal({ show, handleClose }) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    categoryStore.createCategory(category);
     handleClose();
-    categoryStore.addCategory(category);
+    //categoryStore.addCategory(category);
   };
 
   return (
@@ -31,7 +32,7 @@ function AddCategoryModal({ show, handleClose }) {
               />
             </InputGroup>
 
-            <Button variant="dark" type="submit" onClick={handleSubmit}>
+            <Button variant="warning" type="submit" onClick={handleSubmit}>
               Submit
             </Button>
           </form>
