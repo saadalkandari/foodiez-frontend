@@ -6,7 +6,7 @@ class IngredientStore {
     makeAutoObservable(this);
     // this will turn our class into a mobx store and all components can observe the changes that happen in the store
   }
-  products = [];
+  ingredients = [];
 
   createIngredient = async (newIngredient) => {
     try {
@@ -16,8 +16,16 @@ class IngredientStore {
       console.log(error);
     }
   };
+  getAllIngredients = async () => {
+    try {
+      const response = await instance.get("/ingredient");
+      this.ingredients = response.data;
+    } catch (error) {
+      console.log("CategoreyStore -> getAllCategories -> error", error);
+    }
+  };
 }
 
-const IngredientStore = new IngredientStore();
-
+const ingredientStore = new IngredientStore();
+ingredientStore.getAllIngredients();
 export default ingredientStore;

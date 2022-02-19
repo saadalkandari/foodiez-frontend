@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import "./style/stolen.css";
 import "./App.css";
 import Header from "./components/Header";
+import IngredientsList from "./components/IngredientsList";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <CategoriesList />
 
       <RecipesList />
+      <IngredientsList />
       <Home />
     </div>
   );
