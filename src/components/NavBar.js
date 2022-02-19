@@ -4,7 +4,7 @@ import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.mi
 const NavBar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top  nav justify-content-center    ">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top  nav justify-content-center    ">
         <ul className="nav ">
           <a
             className=" flex-sm-fill text-sm-center nav-link active"
