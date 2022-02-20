@@ -19,10 +19,12 @@ class RecipesStore {
 
   createRecipe = async (newRecipe) => {
     try {
+      console.log(newRecipe);
       const formData = new FormData();
       for (const property in newRecipe)
         formData.append(property, newRecipe[property]);
-      const response = await instance.post("/recipes", newRecipe);
+
+      const response = await instance.post("/recipies", formData);
       this.recipes.push(response.data);
     } catch (error) {
       console.log(
@@ -37,4 +39,6 @@ class RecipesStore {
 
 const recipeStore = new RecipesStore();
 recipeStore.fetchAllRrecipes();
+
+console.log(recipeStore.recipes);
 export default recipeStore;

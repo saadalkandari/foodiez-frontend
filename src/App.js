@@ -1,4 +1,3 @@
-import Home from "./components/Home";
 import RecipesList from "./components/RecipesList";
 import CategoriesList from "./components/CategoriesList";
 import NavBar from "./components/NavBar";

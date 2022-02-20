@@ -1,21 +1,32 @@
 import React from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import { Button, Modal, Form, Col } from "react-bootstrap";
 import { useState } from "react";
 import recipesStore from "../stores/recipesStore";
 import catogriesStore from "../stores/catogriesStore";
 
 function AddRecipeModal({ show, handleClose }) {
-  const [recipe, setRecipe] = useState({ title: "" });
+  const [nwRecipe, setNwRecipe] = useState({
+    title: "",
+    image: "",
+    category: "620d09746ce68c5514be2b63",
+    ing: "",
+  });
 
   const handleChange = (event) => {
-    setRecipe({ ...recipe, [event.target.title]: event.target.value });
+    setNwRecipe({ ...nwRecipe, [event.target.name]: event.target.value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    recipesStore.createRecipe(recipe);
+    recipesStore.createRecipe(nwRecipe);
     handleClose();
   };
-
+  const handleImage = (event) => {
+    setNwRecipe({ ...nwRecipe, image: event.target.files[0] });
+    console.log(
+      "🚀 ~ file: AddRecipeModal.js ~ line 26 ~ handleImage ~ nwRecipe",
+      nwRecipe
+    );
+  };
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -24,19 +35,34 @@ function AddRecipeModal({ show, handleClose }) {
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Recipe Title</Form.Label>
-                <Form.Control type="text" placeholder="Enter recipe title" />
+                <Form.Control
+                  type="text"
+                  placeholder="Enter recipe title"
+                  onChange={handleChange}
+                  name="title"
+                />
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Image</Form.Label>
-                <Form.Control type="file" placeholder="Upload recipe image" />
+                <Form.Control
+                  type="file"
+                  placeholder="Upload recipe image"
+                  onChange={handleImage}
+                  name="image"
+                />
               </Form.Group>
 
               <Form.Label>Category</Form.Label>
-              <Form.Select className="mb-3" controlId="formBasicPassword">
+              <Form.Select
+                onChange={handleChange}
+                name="category"
+                className="mb-3"
+                controlId="formBasicPassword"
+              >
                 {catogriesStore.categories.map((category) => (
-                  <option value={category.title}>{category.title}</option>
+                  <option value={category._id}>{category.title} </option>
                 ))}
               </Form.Select>
 
@@ -44,7 +70,9 @@ function AddRecipeModal({ show, handleClose }) {
                 <Form.Label>Ingredients</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter ingredients in this format (e.g. Lettuce, Tomatoes, Eggs, )"
+                  placeholder="Enter ingredients in this format (e.g. Lettuce, Tomatoes)"
+                  onChange={handleChange}
+                  name="ing"
                 />
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
