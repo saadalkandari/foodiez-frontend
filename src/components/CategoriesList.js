@@ -24,7 +24,7 @@ function CategoriesList() {
   return (
     <div>
       {/* <h1 className="title">Categories</h1> */}
-      <Stack direction="horizontal" gap={2}>
+      <Stack direction="horizontal" gap={2} className=" py-5">
         <Form.Control
           className="m-2"
           placeholder="Seach by Category Name"
@@ -39,8 +39,10 @@ function CategoriesList() {
           ADD CATEGORY
         </Button>
       </Stack>
-
-      <Row className=" b-1">{categoryList}</Row>
+      <div className="category-container">
+        {categoryList}
+        {/* <Row>{categoryList}</Row> */}
+      </div>
 
       <Modal show={show} handleClose={handleClose}></Modal>
     </div>
