@@ -1,5 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import instance from "./instance";
+import recipeStore from "./recipesStore";
 
 class CategoreyStore {
   constructor() {
@@ -12,8 +13,15 @@ class CategoreyStore {
     this.categories = [...this.categories, category];
   };
 
-
-  fetchCategoryRecipes = () => {};
+  fetchCategoryRecipes = async (categoryId) => {
+    try {
+      const categoryRecipes = await instance.get(`/categories/${categoryId}`);
+      console.log(categoryRecipes.data);
+      recipeStore.recipes = categoryRecipes.data;
+    } catch (error) {
+      console.log("catogriesStore -> getCategoryRecipies -> error", error);
+    }
+  };
 
   getAllCategories = async () => {
     try {
@@ -32,7 +40,6 @@ class CategoreyStore {
       console.log("CategoreyStore -> creatCategories -> error", error);
     }
   };
-
 }
 
 const categoryStore = new CategoreyStore();

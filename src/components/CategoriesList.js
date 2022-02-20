@@ -23,11 +23,11 @@ function CategoriesList() {
 
   return (
     <div>
-      <h1 className="title">Categories</h1>
+      {/* <h1 className="title">Categories</h1> */}
       <Stack direction="horizontal" gap={2}>
         <Form.Control
           className="m-2"
-          placeholder="Search for Catogery by name"
+          placeholder="Seach by Category Name"
           onChange={search}
         />
         <Button

@@ -10,7 +10,6 @@ const Card = ({ recipe }) => {
           <div class="text-center">
             {/* <h5 class="fw-bolder"></h5> */}
             <p>{recipe.title}</p>
-            <p>{recipe.category}</p>
             <p></p>
           </div>
         </div>
