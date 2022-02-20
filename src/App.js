@@ -17,7 +17,6 @@ function App() {
 
       <RecipesList />
       <IngredientsList />
-      <Home />
     </div>
   );
 }

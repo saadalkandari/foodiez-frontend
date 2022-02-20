@@ -54,3 +54,9 @@
     transform: rotate(360deg);
   }
 }
+
+.category-card {
+  background-color: white;
+  border-color: white;
+  color: grey;
+}
