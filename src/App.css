@@ -69,3 +69,29 @@
 .card:hover {
   border: 2px solid black;
 }
+
+.ingredient-card {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 300px;
+}
+
+.ingredient-image {
+  display: flex;
+  object-fit: cover;
+  width: 250px;
+}
+
+.ingredient-header {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: left;
+  margin: 20px;
+  padding: 15px;
+}
+
+.recipe-title {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
