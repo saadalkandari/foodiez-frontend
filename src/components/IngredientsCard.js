@@ -6,7 +6,7 @@ function IngredientsCard({ ingredient }) {
     <Col className="col-lg-4 mx-auto" id="ingrediants">
       <Card>
         <Card.Body>
-          <Card.Text>{ingredient.image}</Card.Text>
+          <img alt={ingredient.name} src={ingredient.image} />
           <Card.Text>{ingredient.name}</Card.Text>
         </Card.Body>
       </Card>
