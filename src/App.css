@@ -12,9 +12,18 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.Header-container {
+  background-image: url("https://freshlabbatavia.com/wp-content/uploads/2017/07/cooking-header.jpg");
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 300px;
+}
 
 .recipeBG {
-  background-image: url("https://freshlabbatavia.com/wp-content/uploads/2017/07/cooking-header.jpg");
+  height: 500px;
 }
 .hometitle {
   text-align: center;
@@ -24,11 +33,13 @@
 }
 .titlez {
   font-family: fantasy;
+  color: gold;
+  font-size: 70px;
 }
 .sloganz {
   font-family: fantasy;
   color: gold;
-  font-size: larger;
+  font-size: 40px;
 }
 
 .App-header {
