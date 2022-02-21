@@ -55,8 +55,6 @@
   }
 }
 
-.category-card {
-  background-color: white;
-  border-color: white;
-  color: grey;
+.card:hover {
+  border: 2px solid black;
 }

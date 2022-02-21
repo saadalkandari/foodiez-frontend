@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Modal, Form, Col } from "react-bootstrap";
+import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
 import recipesStore from "../stores/recipesStore";
 import catogriesStore from "../stores/catogriesStore";

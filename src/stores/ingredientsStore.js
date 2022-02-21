@@ -10,7 +10,11 @@ class IngredientStore {
 
   createIngredient = async (newIngredient) => {
     try {
-      const response = await instance.post("/ingredient", newIngredient);
+      const formData = new FormData();
+      for (const property in newIngredient)
+        formData.append(property, newIngredient[property]);
+
+      const response = await instance.post("/ingredient", formData);
       this.ingredients.push(response.data);
     } catch (error) {
       console.log(error);
