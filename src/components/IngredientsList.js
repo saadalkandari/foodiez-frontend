@@ -1,3 +1,4 @@
+//IngredientsList
 import React from "react";
 import { observer } from "mobx-react";
 import ModalIngredients from "./AddIngredientModal";
@@ -16,17 +17,35 @@ function Ingredients() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div>
-      <p>Ingredients</p>
+    <div style={{ backgroundColor: "lightgrey" }}>
+      <h2 className="ingredient-header">
+        Ingredients{" "}
+        <Button
+          onClick={handleShow}
+          className="m-1"
+          variant="warning"
+          size="sm"
+        >
+          ADD INGREDIENT
+        </Button>
+      </h2>
       <ModalIngredients
         show={show}
         handleClose={handleClose}
       ></ModalIngredients>
 
-      <Button onClick={handleShow} className="m-1" variant="warning" size="sm">
-        ADD INGREDIENT
-      </Button>
-      <Row className=" b-1">{IngredientsList}</Row>
+      <Row
+        style={{
+          display: "flex",
+          flexFlow: "row-wrap",
+          justifyContent: "center",
+          alignContent: "center",
+          alignItems: "flex-start",
+          margin: "20px",
+        }}
+      >
+        {IngredientsList}
+      </Row>
     </div>
   );
 }

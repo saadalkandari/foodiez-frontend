@@ -1,15 +1,21 @@
+//RecipesCard
 import React from "react";
 
 const Card = ({ recipe }) => {
   return (
-    <div class="col mb-5" id="recepies">
+    <div class="col mb-5" id="recepies" style={{ width: "350px" }}>
       <div class="card h-100">
-        <img class="card-img-top" src={recipe.image} alt="..." />
+        <img
+          class="card-img-top"
+          src={recipe.image}
+          alt="..."
+          style={{ height: "420px", objectFit: "cover" }}
+        />
 
         <div class="card-body p-4">
           <div class="text-center">
             {/* <h5 class="fw-bolder"></h5> */}
-            <p>{recipe.title}</p>
+            <h5 className="recipe-title">{recipe.title}</h5>
             <p></p>
           </div>
         </div>

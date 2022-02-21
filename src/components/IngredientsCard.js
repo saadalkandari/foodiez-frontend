@@ -1,3 +1,4 @@
+//IngredientsCard
 import React, { useState } from "react";
 import { Card, Col } from "react-bootstrap";
 import IngredientDetailModal from "./IngredientDetailModal";
@@ -10,13 +11,26 @@ function IngredientsCard({ ingredient }) {
   };
   return (
     <Col className="col-lg-4 mx-auto" id="ingrediants">
-      <Card>
+      <Card
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          padding: "10px",
+          width: "300px",
+          height: "300px",
+          margin: "10px",
+        }}
+      >
         <Card.Body
           onClick={() => {
             setShow(true);
           }}
         >
-          <img alt={ingredient.name} src={ingredient.image} />
+          <img
+            className="ingredient-image"
+            alt={ingredient.name}
+            src={ingredient.image}
+          />
           <Card.Text>{ingredient.name}</Card.Text>
         </Card.Body>
         <IngredientDetailModal
