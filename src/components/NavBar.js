@@ -13,48 +13,36 @@ const NavBar = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top  nav justify-content-center    ">
-        <ul className="nav ">
-          <a
-            className=" flex-sm-fill text-sm-center nav-link active"
-            aria-current="page"
-            href="#categories"
-            smooth
-          >
-            CATEGORIES
-          </a>
-
-          <a
-            className=" flex-sm-fill text-sm-center nav-link active"
-            aria-current="page"
-            href="#recepies"
-            smooth
-            onClick={recipesStore.fetchAllRrecipes}
-          >
-            RECEPIES
-          </a>
-
-          <a
-            className="nav-link active flex-sm-fill text-sm-center"
-            aria-current="page"
-            href="#ingrediants"
-            smooth
-          >
-            INGREDIANTS
-          </a>
-          <Button
-            onClick={handleShow}
-            className="m-1"
-            variant="warning"
-            size="sm"
-          >
-            ADD RECIPE
-          </Button>
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark fixed-top ">
+      <div className="collapse navbar-collapse justify-content-center nav-tabs">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className=" nav-link" href="#categories" smooth>
+              CATEGORIES
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              className="nav-link"
+              href="#recepies"
+              smooth
+              onClick={recipesStore.fetchAllRrecipes}
+            >
+              RECEPIES
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#ingrediants" smooth>
+              INGREDIANTS
+            </a>
+          </li>
         </ul>
-        <Modal show={show} handleClose={handleClose}></Modal>;
-      </nav>
-    </div>
+      </div>
+      <Button onClick={handleShow} className="m-1" variant="warning" size="sm">
+        ADD RECIPE
+      </Button>
+      <Modal show={show} handleClose={handleClose}></Modal>;
+    </nav>
   );
 };
 
